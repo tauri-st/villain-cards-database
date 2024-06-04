@@ -7,6 +7,9 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///villain.db"
 
 db = SQLAlchemy(app)
 
+class Villain(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+
 @app.route("/")
 def hello_world():
   return render_template("villain.html")
