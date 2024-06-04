@@ -15,6 +15,9 @@ class Villain(db.Model):
   url = db.Column(db.String(250), nullable=False)
   date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
+  def __repr__(self):
+    return "<Villain " + self.name + ">"
+
 @app.route("/")
 def hello_world():
   return render_template("villain.html")
