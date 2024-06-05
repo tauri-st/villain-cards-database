@@ -50,4 +50,8 @@ def add_user():
   if not url:
     errors.append("Oops! Looks like you forgot an image!")
 
+  villain = Villain.query.filter_by(name=name).first()
+  if villain:
+    errors.append("Oops! A villain with that name already exists!")
+
 app.run(host='0.0.0.0', port=8080)
