@@ -58,6 +58,7 @@ def add_user():
   else:
     new_villain = Villain(name=name,description=description, interests=interests, url=url)
     db.session.add(new_villain)
+    db.session.commit()
     return render_template("villain.html", villains=Villain.query.all())
 
 app.run(host='0.0.0.0', port=8080)
