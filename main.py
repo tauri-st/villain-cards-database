@@ -27,7 +27,7 @@ with app.app_context():
 
 
 @app.route("/")
-def hello_world():
+def villain_cards():
   return render_template("villain.html")
   
 @app.route("/add", methods=["GET"])
