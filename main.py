@@ -53,5 +53,7 @@ def add_user():
   villain = Villain.query.filter_by(name=name).first()
   if villain:
     errors.append("Oops! A villain with that name already exists!")
+  if errors:
+    render_template("addvillain.html", errors=errors)
 
 app.run(host='0.0.0.0', port=8080)
