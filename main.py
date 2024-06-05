@@ -54,7 +54,7 @@ def add_user():
   if villain:
     errors.append("Oops! A villain with that name already exists!")
   if errors:
-    render_template("addvillain.html", errors=errors)
+    return render_template("addvillain.html", errors=errors)
   else:
     new_villain = Villain(name=name,description=description, interests=interests, url=url)
     db.session.add(new_villain)
