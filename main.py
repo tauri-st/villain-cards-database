@@ -8,6 +8,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///villain.db"
 
 db = SQLAlchemy(app)
 
+
 class Villain(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(80), unique=True, nullable=False)
@@ -19,12 +20,16 @@ class Villain(db.Model):
   def __repr__(self):
     return "<Villain " + self.name + ">"
 
+
 with app.app_context():
   db.create_all()
   db.session.commit()
 
+
 @app.route("/")
+@app.route("/add", methods=["GET"])
 def hello_world():
   return render_template("villain.html")
+
 
 app.run(host='0.0.0.0', port=8080)
