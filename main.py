@@ -18,6 +18,10 @@ class Villain(db.Model):
   def __repr__(self):
     return "<Villain " + self.name + ">"
 
+with app.app_context():
+  db.create_all()
+  db.session.commit()
+
 @app.route("/")
 def hello_world():
   return render_template("villain.html")
