@@ -20,12 +20,12 @@
     {% for villain in villains %}
     <div class="card">
       <h2 class="card-name">{{villain.name}}</h2>
-      <img src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2019/09/betty.jpg" class="card-image"/>
+      <img src="{{villian.url}}" class="card-image"/>
       <div class="card-body">
-        <p class="card-description">{{description}}</p>
+        <p class="card-description">{{villain.description}}</p>
         <h4>Interests</h4>
-        <p class="card-interests">{{interests}}</p>
-        <p class="card-date-added">{{url}}</p>
+        <p class="card-interests">{{villain.interests}}</p>
+        <p class="card-date-added">{{villain.date_added}}</p>
       </div>
       {% endfor %}
     </div>
