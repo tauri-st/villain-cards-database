@@ -20,15 +20,15 @@
     {% for villain in villains %}
     <div class="card">
       <h2 class="card-name">{{villain.name}}</h2>
-      <img src="{{villian.url}}" class="card-image"/>
+      <img src={{villian.url}} class="card-image"/>
       <div class="card-body">
         <p class="card-description">{{villain.description}}</p>
         <h4>Interests</h4>
         <p class="card-interests">{{villain.interests}}</p>
-        <p class="card-date-added">{{villain.date_added}}</p>
+        <p class="card-date-added">Date added: {{villain.date_added}}</p>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </body>
 </html>
