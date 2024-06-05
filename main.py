@@ -27,9 +27,10 @@ with app.app_context():
 
 
 @app.route("/")
-@app.route("/add", methods=["GET"])
 def hello_world():
   return render_template("villain.html")
-
+@app.route("/add", methods=["GET"])
+def add_villain():
+  return render_template("addvillain.html", errors=[])
 
 app.run(host='0.0.0.0', port=8080)
