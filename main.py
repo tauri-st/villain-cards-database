@@ -45,6 +45,9 @@ def delete_user():
   if villain:
     db.session.delete(villain)
     db.session.commit()
+    return render_template("villain.html", villains=Villain.query.all())
+  else:
+    return render_template("deletevillain.html", errors=["Oops! That villain doesn't exist!"])
   
 #@app.route("/addVillain", methods=["POST"])
 #def add_user():
