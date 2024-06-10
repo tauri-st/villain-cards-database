@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import requests
+#import requests
 
 app = Flask("app")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///villain.db"
@@ -27,12 +27,12 @@ with app.app_context():
 
 
 @app.route("/")
-def villain_cards():
+def villains_cards():
   return render_template("villain.html", villains=Villain.query.all())
   
 #@app.route("/add", methods=["GET"])
 #def add_villain():
-#  return render_template("addvillain.html", errors=[])
+  #return render_template("addvillain.html", errors=[])
   
 #@app.route("/addVillain", methods=["POST"])
 #def add_user():
@@ -49,7 +49,7 @@ def villain_cards():
 #  url = request.form.get("url")
 #  if not url:
 #    errors.append("Oops! Looks like you forgot an image!")
-#
+
 #  villain = Villain.query.filter_by(name=name).first()
 #  if villain:
 #    errors.append("Oops! A villain with that name already exists!")
